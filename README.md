@@ -1,6 +1,3 @@
-# GranatumX-Templates
-This repository contains templates to simplify the creation of Gboxes.
-
 # Steps to make a Gbox
 
 1. **First,** you&#39;ll need to install a working distribution of Docker. We recommend that Windows natives install WSL distribution, and then download Docker following the instructions from [here](https://docs.docker.com/docker-for-windows/wsl/) .
