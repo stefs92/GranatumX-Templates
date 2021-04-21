@@ -4,7 +4,7 @@ FROM granatumx/gbox-r-sdk:1.0.0
 COPY . .
 
 # install required dependencies here
-#RUN Rscript install_packages.R
+RUN Rscript install_packages.R
 
 RUN ./GBOXtranslateVERinYAMLS.sh
 RUN tar zcvf /gbox.tgz  package.yaml 
