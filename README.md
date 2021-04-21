@@ -4,13 +4,13 @@
 
 2. **Download and run** GranatumX locally:
 
-  a. Run **source \&lt;( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
+  * Run **source \&lt;( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
   
-  b. If you are running GranatumX for the first time, run **gx init.sh** ;otherwise,run **gx run.sh** to run the webapp. This command will tail the webapp. Wait until it starts the server, which should take 2 minutes to complete. You can &quot;ctrl c&quot; out of it    without stopping the service, and you can run **gxtail** to monitor the progress at any time.
+  * If you are running GranatumX for the first time, run **gx init.sh** ;otherwise,run **gx run.sh** to run the webapp. This command will tail the webapp. Wait until it starts the server, which should take 2 minutes to complete. You can &quot;ctrl c&quot; out of it    without stopping the service, and you can run **gxtail** to monitor the progress at any time.
 
-  c. Go to **localhost:34567** in your web browser to see the pipeline up and running.
+  * Go to **localhost:34567** in your web browser to see the pipeline up and running.
   
-  d. If you would like to run as a web service for others, you can install and run Apache and use a Proxy to the port, but be sure to increase ProxyTimeout for large files and install to root &quot;/&quot; for the web location.
+  * If you would like to run as a web service for others, you can install and run Apache and use a Proxy to the port, but be sure to increase ProxyTimeout for large files and install to root &quot;/&quot; for the web location.
 
 3. **Modify the template to install required dependencies.** Edit the Dockerfile by adding any package installation scripts your Gbox requires. You may add the commands to install packages directly in Dockerfile, or, if you are using the R template, feel free to modify the install\_packages.R script instead.
 
