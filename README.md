@@ -45,5 +45,6 @@
     Once the testing is complete, you may run **gx removeGbox [gbox name]** to remove the staging image. Then, run **gbuild** to build the image corresponding to your Gbox and deploy the final version by running **gx installGbox.sh [name of gbox]**.
 
     The testing and deployment process is summarized by the following diagram.
+    
+![Issue](https://user-images.githubusercontent.com/31740043/115763643-ad0f6a80-a372-11eb-8122-c0b85905bdef.png)
 
-![](RackMultipart20210421-4-1um9zah_html_13a10b061a62e8d6.png)
