@@ -4,13 +4,13 @@
 
 2. **Download and run** GranatumX locally:
 
-  * Run **source \&lt;( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
+    * Run **source \&lt;( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
   
-  * If you are running GranatumX for the first time, run **gx init.sh** ;otherwise,run **gx run.sh** to run the webapp. This command will tail the webapp. Wait until it starts the server, which should take 2 minutes to complete. You can &quot;ctrl c&quot; out of it    without stopping the service, and you can run **gxtail** to monitor the progress at any time.
+    * If you are running GranatumX for the first time, run **gx init.sh** ;otherwise,run **gx run.sh** to run the webapp. This command will tail the webapp. Wait until it starts the server, which should take 2 minutes to complete. You can &quot;ctrl c&quot; out of it    without stopping the service, and you can run **gxtail** to monitor the progress at any time.
 
-  * Go to **localhost:34567** in your web browser to see the pipeline up and running.
+    * Go to **localhost:34567** in your web browser to see the pipeline up and running.
   
-  * If you would like to run as a web service for others, you can install and run Apache and use a Proxy to the port, but be sure to increase ProxyTimeout for large files and install to root &quot;/&quot; for the web location.
+    * If you would like to run as a web service for others, you can install and run Apache and use a Proxy to the port, but be sure to increase ProxyTimeout for large files and install to root &quot;/&quot; for the web location.
 
 3. **Modify the template to install required dependencies.** Edit the Dockerfile by adding any package installation scripts your Gbox requires. You may add the commands to install packages directly in Dockerfile, or, if you are using the R template, feel free to modify the install\_packages.R script instead.
 
@@ -18,9 +18,9 @@
 
 5. **Customize the package.yaml file:** A key requirement of a GranatumX Gbox is the package.yaml file. In this file, you&#39;ll add descriptive information about your Gbox, information about the backend scripts your Gbox uses to perform its operations, and definitions for the frontend user interface of your Gbox. For a full description of all available fields, check out the [index.d.ts](https://github.com/granatumx/install-gbox/blob/master/types/index.d.ts) file. Two key fields are briefly described below.
 
-The &quot;endpoints&quot; field contains the logic which will connect a user&#39;s pipeline to your Gbox backend. In our template, the Gbox backend is a docker image, and the command to be executed when the user runs your Gbox (in Python template) is &quot;python ./main.py&quot;. You can look at the g\_packages folder maybe add a link here? Couldn&#39;t find this folder in the Github repo that was originally linked for examples of other backend configuration options.
+> The &quot;endpoints&quot; field contains the logic which will connect a user&#39;s pipeline to your Gbox backend. In our template, the Gbox backend is a docker image, and the command to be executed when the user runs your Gbox (in Python template) is &quot;python ./main.py&quot;. You can look at the g\_packages folder maybe add a link here? Couldn&#39;t find this folder in the Github repo that was originally linked for examples of other backend configuration options.
 
-The &quot;frontend&quot; field contains the &quot;args&quot; section defining what HTML inputs to show the user (these serve as the arguments which will be passed to your Gbox), the &quot;imports&quot; section defining what types of inputs from other Gboxes your Gbox accepts, and the &quot;exports&quot; section defining the types your Gbox exports to other Gboxes. The &quot;injectInto&quot; line should be modified to include keywords used to access args/imports/exports from the main script, as specified in the template comments.
+> The &quot;frontend&quot; field contains the &quot;args&quot; section defining what HTML inputs to show the user (these serve as the arguments which will be passed to your Gbox), the &quot;imports&quot; section defining what types of inputs from other Gboxes your Gbox accepts, and the &quot;exports&quot; section defining the types your Gbox exports to other Gboxes. The &quot;injectInto&quot; line should be modified to include keywords used to access args/imports/exports from the main script, as specified in the template comments.
 
 6. **Edit your main script** main.R / main.py with your application code. The template provided demonstrates how to handle import/export of data using granatum\_sdk.
 
