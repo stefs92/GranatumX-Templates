@@ -4,7 +4,7 @@
 
 2. **Download and run** GranatumX locally:
 
-    * Run **source \lt( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
+    * Run **source \lt& ( docker run --rm -it granatumx/scripts:1.0.0 gx.sh )** to pull scripts and aliases from the docker container.
   
     * If you are running GranatumX for the first time, run **gx init.sh** ;otherwise,run **gx run.sh** to run the webapp. This command will tail the webapp. Wait until it starts the server, which should take 2 minutes to complete. You can &quot;ctrl c&quot; out of it    without stopping the service, and you can run **gxtail** to monitor the progress at any time.
 
