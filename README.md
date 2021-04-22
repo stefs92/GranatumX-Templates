@@ -18,10 +18,9 @@
 
 5. **Customize the package.yaml file:** A key requirement of a GranatumX Gbox is the package.yaml file. In this file, you&#39;ll add descriptive information about your Gbox, information about the backend scripts your Gbox uses to perform its operations, and definitions for the frontend user interface of your Gbox. For a full description of all available fields, check out the [index.d.ts](https://github.com/granatumx/install-gbox/blob/master/types/index.d.ts) file. Two key fields are briefly described below.
 
-&nbsp;
-: The &quot;endpoints&quot; field contains the logic which will connect a user&#39;s pipeline to your Gbox backend. In our template, the Gbox backend is a docker image, and the command to be executed when the user runs your Gbox (in Python template) is &quot;python ./main.py&quot;. You can look at the g\_packages folder maybe add a link here? Couldn&#39;t find this folder in the Github repo that was originally linked for examples of other backend configuration options.
+    The &quot;endpoints&quot; field contains the logic which will connect a user&#39;s pipeline to your Gbox backend. In our template, the Gbox backend is a docker image, and the command to be executed when the user runs your Gbox (in Python template) is &quot;python ./main.py&quot;. You can look at the g\_packages folder maybe add a link here? Couldn&#39;t find this folder in the Github repo that was originally linked for examples of other backend configuration options.
 
-The &quot;frontend&quot; field contains the &quot;args&quot; section defining what HTML inputs to show the user (these serve as the arguments which will be passed to your Gbox), the &quot;imports&quot; section defining what types of inputs from other Gboxes your Gbox accepts, and the &quot;exports&quot; section defining the types your Gbox exports to other Gboxes. The &quot;injectInto&quot; line should be modified to include keywords used to access args/imports/exports from the main script, as specified in the template comments.
+    The &quot;frontend&quot; field contains the &quot;args&quot; section defining what HTML inputs to show the user (these serve as the arguments which will be passed to your Gbox), the &quot;imports&quot; section defining what types of inputs from other Gboxes your Gbox accepts, and the &quot;exports&quot; section defining the types your Gbox exports to other Gboxes. The &quot;injectInto&quot; line should be modified to include keywords used to access args/imports/exports from the main script, as specified in the template comments.
 
 6. **Edit your main script** main.R / main.py with your application code. The template provided demonstrates how to handle import/export of data using granatum\_sdk.
 
@@ -31,20 +30,20 @@ The &quot;frontend&quot; field contains the &quot;args&quot; section defining wh
 
 9. **If needed, run additional tests** locally. The script test/test.sh runs local testing on the Gbox and
 
-can be customized as desired. In order to initiate tests, you would need to run
+    can be customized as desired. In order to initiate tests, you would need to run
 
-**gxtest /var/granatum/steps/step\_id**
+    **gxtest /var/granatum/steps/step\_id**
 
-where **step\_id** can be found from the url of the step associated to the Gbox in your local GranatumX pipeline. For instance, one might run
+    where **step\_id** can be found from the url of the step associated to the Gbox in your local GranatumX pipeline. For instance, one might run
 
-**Gxtest /var/granatum/steps/3faf4e2f-5415-47b3-a5a2-7160ff729a68** for an example value of step\_id = **3faf4e2f-5415-47b3-a5a2-7160ff729a68**
+    **Gxtest /var/granatum/steps/3faf4e2f-5415-47b3-a5a2-7160ff729a68** for an example value of step\_id = **3faf4e2f-5415-47b3-a5a2-7160ff729a68**
 
-You may also need to adjust permissions by running **chmod a+rx test/test.sh**
+    You may also need to adjust permissions by running **chmod a+rx test/test.sh**
 
-Then, simply run **gtest** to initiate the testing. After the test is complete, you may access the results from the &quot;runtest&quot; folder, which should appear in the directory containing your Gbox material.
+    Then, simply run **gtest** to initiate the testing. After the test is complete, you may access the results from the &quot;runtest&quot; folder, which should appear in the directory containing your Gbox material.
 
-Once the testing is complete, you may run **gx removeGbox [gbox name]** to remove the staging image. Then, run **gbuild** to build the image corresponding to your Gbox and deploy the final version by running **gx installGbox.sh [name of gbox]**.
+    Once the testing is complete, you may run **gx removeGbox [gbox name]** to remove the staging image. Then, run **gbuild** to build the image corresponding to your Gbox and deploy the final version by running **gx installGbox.sh [name of gbox]**.
 
-The testing and deployment process is summarized by the following diagram.
+    The testing and deployment process is summarized by the following diagram.
 
 ![](RackMultipart20210421-4-1um9zah_html_13a10b061a62e8d6.png)
