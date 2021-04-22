@@ -1,6 +1,6 @@
 # Steps to make a Gbox
 
-1. **First,** you&#39;ll need to install a working distribution of Docker. We recommend that Windows natives install WSL distribution, and then download Docker following the instructions from [here](https://docs.docker.com/docker-for-windows/wsl/) .
+1. **First,** you&#39;ll need to install a working distribution of Docker. We recommend that Windows natives install WSL distribution (for example, you can get Ubuntu distribution from Microsoft Store), and then download Docker following the instructions from [here](https://docs.docker.com/docker-for-windows/wsl/) .
 
 2. **Download and run** GranatumX locally:
 
