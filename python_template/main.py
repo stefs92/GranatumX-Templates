@@ -26,6 +26,9 @@ def main():
     # INSERT THE BODY OF YOUR SCRIPT HERE
     # for example, you may transpose the gene expression data as
     assay["matrix"] = np.array(assay.get("matrix")).T
+    # then, this numpy array should be turned into a list 
+    # of lists before exporting
+    assay["matrix"] = assay["matrix"].tolist()
 
     # export results
     # here, we use keywords specified in the "extractFrom"
