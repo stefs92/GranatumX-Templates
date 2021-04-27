@@ -14,7 +14,7 @@ gboxes:
       backend:
         type: docker
         image: {GBOX}
-        cmd: python ./main.R
+        cmd: python ./main.py
     frontend:
       args:
         - type: number 
