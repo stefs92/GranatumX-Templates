@@ -29,3 +29,4 @@ gboxes:
       exports:
         - kind: assay # the "assay" data type is commonly used for both imports and exports through GranatumX
           extractFrom: exampleExport # this field is used to access exports from the main script
+          meta: {}
